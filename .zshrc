@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="aussiegeek"
+ZSH_THEME="frisk"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,11 +112,18 @@ alias mountptmp='sshfs raven:/ptmp/mvondrak/ ~/ravenptmp/'
 alias mountwork='sshfs workstation:/datavon1/ ~/workstation/'
 alias mountgpu='sshfs gpu-mvondrak:/work/ ~/gpuwork/'
 alias blueOn='sudo systemctl start bluetooth.service'
-alias vi='~/software/vim/src/vim' 
+#alias vi='~/software/vim/src/vim' 
 alias em='emacsclient -c'
-
+alias vi='vim'
 
 # i3 aliases
 ## Home setup
 alias disp_home='xrandr --output DP-1 --left-of eDP-1; xrandr --output HDMI-1 --left-of DP-1'
 alias connect_sony='bluetoothctl connect 88:C9:E8:07:72:77'
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+. "$HOME/.cargo/env"

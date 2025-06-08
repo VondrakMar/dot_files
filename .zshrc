@@ -35,13 +35,13 @@ ZSH_THEME="frisk"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -102,24 +102,29 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -alhF'
 alias la='ls -A'
 alias l='ls -CF'
-alias lk='ls -ltr'
+alias lk='ls -lhtr'
 alias duM='du --max-depth=1 -BM'
 alias duG='du --max-depth=1 -BG'
 alias LOCssh='ssh -L 2345:localhost:5901 workstation'
 alias GPUssh='ssh -L 1234:localhost:5901 gpu-mvondrak'
 alias i3solve='bash /home/mvondrak/Documents/i3solve.sh'
-alias mountptmp='sshfs raven:/ptmp/mvondrak/ ~/ravenptmp/'
-alias mountwork='sshfs workstation:/datavon1/ ~/workstation/'
-alias mountgpu='sshfs gpu-mvondrak:/work/ ~/gpuwork/'
-alias blueOn='sudo systemctl start bluetooth.service'
+
 #alias vi='~/software/vim/src/vim' 
-alias em='emacsclient -c'
+
+
 alias vi='vim'
 
-# i3 aliases
-## Home setup
+# bluezub
+alias blueOn='sudo systemctl start bluetooth.service'
+alias connect_sony='bluetoothctl connect 80:99:E7:E1:1A:EB'
+alias reconnect_sony='bluetoothctl disconnect 80:99:E7:E1:1A:EB; bluetoothctl connect 80:99:E7:E1:1A:EB'
+
+# unused display
 alias disp_home='xrandr --output DP-1 --left-of eDP-1; xrandr --output HDMI-1 --left-of DP-1'
-alias connect_sony='bluetoothctl connect 88:C9:E8:07:72:77'
+
+export PATH="$HOME/software/symlinks:$PATH"
+export PYTHONPATH=${PYTHONPATH}:/home/mvondrak/python_custom
+
 
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -127,3 +132,21 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 . "$HOME/.cargo/env"
+
+# One command for sshfs stuff
+alias mount_viper='sshfs viper:/ptmp/mvondrak/ ~/viperptmp/'
+alias mount_vipergpu_ptmp='sshfs viperGPU:/ptmp/mvondrak/ ~/vipergpu_ptmp/'
+alias mount_raven='sshfs raven:/ptmp/mvondrak/ ~/ravenptmp/'
+alias mount_workstation='sshfs workstation:/datavon1/ ~/workstation/'
+alias mount_raccoon='sshfs raccoon:/home/mvondrak/ ~/raccoon_dir/'
+alias mount_nexus='sshfs raccoon:/nexus/posix0/FHI-Theory/mvondrak ~/fhi_nexus/'
+
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/mvondrak/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

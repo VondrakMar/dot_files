@@ -1,0 +1,80 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+  move_tab_right = <Primary><Alt>Right
+  move_tab_left = <Primary><Alt>Left
+  next_tab = <Shift>Right
+  prev_tab = <Shift>Left
+  switch_to_tab_1 = <Primary><Alt>1
+  switch_to_tab_2 = <Primary><Alt>2
+  switch_to_tab_3 = <Primary><Alt>3
+  switch_to_tab_4 = <Primary><Alt>4
+  switch_to_tab_5 = <Primary><Alt>5
+  switch_to_tab_6 = <Primary><Alt>6
+  switch_to_tab_7 = <Primary><Alt>7
+  switch_to_tab_8 = <Primary><Alt>8
+  switch_to_tab_9 = <Primary><Alt>9
+  switch_to_tab_10 = <Primary><Alt>0
+[profiles]
+  [[default]]
+    foreground_color = "#ffffff"
+    show_titlebar = False
+  [[black]]
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = grubev
+  [[my_lay]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1920:27
+      maximised = True
+      fullscreen = False
+      size = 2560, 1389
+      title = /usr/bin/zsh
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = normal, raccoon, viperGPU, raven, viper
+      last_active_term = 3b344c9e-a8e6-4bef-9b19-ec744ce7dc10, e35e9685-049c-49cb-82b1-072371404c33, 68895983-36df-4bfb-bf9e-119be3a1ba38, ea978aad-6ccb-4870-bde5-b5fbf8c7988f, c5dac854-caad-4633-afb5-c4953f70d63f
+      active_page = 1
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 3b344c9e-a8e6-4bef-9b19-ec744ce7dc10
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = e35e9685-049c-49cb-82b1-072371404c33
+    [[[terminal4]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = 68895983-36df-4bfb-bf9e-119be3a1ba38
+    [[[terminal5]]]
+      type = Terminal
+      parent = child1
+      order = 3
+      profile = default
+      uuid = ea978aad-6ccb-4870-bde5-b5fbf8c7988f
+    [[[terminal6]]]
+      type = Terminal
+      parent = child1
+      order = 4
+      profile = default
+      uuid = c5dac854-caad-4633-afb5-c4953f70d63f
+[plugins]

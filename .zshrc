@@ -108,19 +108,21 @@ alias duG='du --max-depth=1 -BG'
 alias LOCssh='ssh -L 2345:localhost:5901 workstation'
 alias GPUssh='ssh -L 1234:localhost:5901 gpu-mvondrak'
 alias i3solve='bash /home/mvondrak/Documents/i3solve.sh'
-
+alias mount_viper_ptmp='sshfs viper:/ptmp/mvondrak/ ~/viperptmp/'
+alias mount_vipergpu_ptmp='sshfs viperGPU:/ptmp/mvondrak/ ~/vipergpu_ptmp/'
+alias mount_raven_ptmp='sshfs raven:/ptmp/mvondrak/ ~/ravenptmp/'
+alias mount_work='sshfs workstation:/datavon1/ ~/workstation/'
+alias mount_gpu='sshfs gpu-mvondrak:/work/ ~/gpuwork/'
+alias blueOn='sudo systemctl start bluetooth.service'
 #alias vi='~/software/vim/src/vim' 
-
-
+alias em='emacsclient -c'
 alias vi='vim'
 
-# bluezub
-alias blueOn='sudo systemctl start bluetooth.service'
+# i3 aliases
+## Home setup
+alias disp_home='xrandr --output DP-1 --left-of eDP-1; xrandr --output HDMI-1 --left-of DP-1'
 alias connect_sony='bluetoothctl connect 80:99:E7:E1:1A:EB'
 alias reconnect_sony='bluetoothctl disconnect 80:99:E7:E1:1A:EB; bluetoothctl connect 80:99:E7:E1:1A:EB'
-
-# unused display
-alias disp_home='xrandr --output DP-1 --left-of eDP-1; xrandr --output HDMI-1 --left-of DP-1'
 
 export PATH="$HOME/software/symlinks:$PATH"
 export PYTHONPATH=${PYTHONPATH}:/home/mvondrak/python_custom
@@ -135,11 +137,11 @@ eval "$(pyenv init -)"
 
 # One command for sshfs stuff
 alias mount_viper='sshfs viper:/ptmp/mvondrak/ ~/viperptmp/'
-alias mount_vipergpu_ptmp='sshfs viperGPU:/ptmp/mvondrak/ ~/vipergpu_ptmp/'
 alias mount_raven='sshfs raven:/ptmp/mvondrak/ ~/ravenptmp/'
 alias mount_workstation='sshfs workstation:/datavon1/ ~/workstation/'
 alias mount_raccoon='sshfs raccoon:/home/mvondrak/ ~/raccoon_dir/'
 alias mount_nexus='sshfs raccoon:/nexus/posix0/FHI-Theory/mvondrak ~/fhi_nexus/'
+alias mount_nexus_workstation='sshfs workstation:/nexus/posix0/FHI-Theory/mvondrak ~/fhi_nexus/'
 
 
 # >>> juliaup initialize >>>
@@ -150,3 +152,5 @@ path=('/home/mvondrak/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+. "$HOME/.local/bin/env"
